@@ -1,5 +1,12 @@
 # SkillForge AI
 
+## 🌐 Live Website
+
+The SkillForge AI platform is deployed and available online.  
+Explore the live application to experience the AI-powered learning roadmap, skill analysis, and career guidance features.
+
+🔗 Live Demo: https://talentforge-hub.netlify.app
+
 > **AI-powered personalized learning and career roadmap platform**
 
 SkillForge AI is a production-ready, full-stack application built to help college students identify skill gaps, master missing competencies via custom 30/60/90-day learning roadmaps, parse resumes against ATS engines, log study sessions, and consult an AI mentor to become placement and internship ready.
