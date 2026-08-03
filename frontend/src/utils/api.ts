@@ -11,8 +11,8 @@ export async function apiRequest(
   );
 
 
-  const headers: HeadersInit = {
-    ...(options.headers || {}),
+  const headers: Record<string, string> = {
+    ...(options.headers as Record<string, string> || {}),
   };
 
 
