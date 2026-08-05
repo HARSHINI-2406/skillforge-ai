@@ -5,7 +5,7 @@
 The SkillForge AI platform is deployed and available online.  
 Explore the live application to experience the AI-powered learning roadmap, skill analysis, and career guidance features.
 
-🔗 Live Demo: https://talentforge-hub.netlify.app
+🔗 Live Demo: https://skillforge-ai-frontend.onrender.com
 
 > **AI-powered personalized learning and career roadmap platform**
 
