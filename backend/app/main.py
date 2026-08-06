@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine, Base
-from app.routers import auth, skills, roadmap, resume, analytics, chat, community
+from app.routers import auth, skills, roadmap, resume, analytics, chat, community, assessment
 
 # Create database tables automatically
 Base.metadata.create_all(bind=engine)
@@ -35,6 +35,7 @@ app.include_router(resume.router)
 app.include_router(analytics.router)
 app.include_router(chat.router)
 app.include_router(community.router)
+app.include_router(assessment.router)
 
 @app.get("/")
 def read_root():
