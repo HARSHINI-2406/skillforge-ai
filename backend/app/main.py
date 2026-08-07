@@ -2,10 +2,21 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.database import engine, Base
-from app.routers import auth, skills, roadmap, resume, analytics, chat, community, assessment
+from app.routers import (
+    auth,
+    skills,
+    roadmap,
+    resume,
+    analytics,
+    chat,
+    community,
+    assessment
+)
+
 
 # Create database tables automatically
 Base.metadata.create_all(bind=engine)
+
 
 app = FastAPI(
     title="SkillForge AI API",
@@ -13,11 +24,13 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Enable CORS for Render frontend
+
+# Enable CORS for frontend deployments
 origins = [
     "http://localhost:5173",
     "https://skillforge-ai-frontend.onrender.com",
 ]
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -26,6 +39,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # Mount routers
 app.include_router(auth.router)
@@ -37,6 +51,10 @@ app.include_router(chat.router)
 app.include_router(community.router)
 app.include_router(assessment.router)
 
+
 @app.get("/")
 def read_root():
-    return {"status": "running", "project": "SkillForge AI"}
+    return {
+        "status": "running",
+        "project": "SkillForge AI"
+    }
