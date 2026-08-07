@@ -13,10 +13,8 @@ from app.routers import (
     assessment
 )
 
-
-# Create database tables automatically
+# Create database tables
 Base.metadata.create_all(bind=engine)
-
 
 app = FastAPI(
     title="SkillForge AI API",
@@ -25,7 +23,7 @@ app = FastAPI(
 )
 
 
-# Enable CORS for frontend deployments
+# CORS CONFIGURATION
 origins = [
     "http://localhost:5173",
     "https://skillforge-ai-frontend.onrender.com",
@@ -41,7 +39,7 @@ app.add_middleware(
 )
 
 
-# Mount routers
+# ROUTERS
 app.include_router(auth.router)
 app.include_router(skills.router)
 app.include_router(roadmap.router)
