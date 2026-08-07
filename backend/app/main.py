@@ -15,6 +15,7 @@ app = FastAPI(
 
 # Enable CORS for Render frontend
 origins = [
+    "http://localhost:5173",
     "https://skillforge-ai-frontend.onrender.com",
 ]
 
