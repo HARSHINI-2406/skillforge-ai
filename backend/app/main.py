@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
 from app.database import engine, Base
 from app.routers import auth, skills, roadmap, resume, analytics, chat, community, assessment
 
@@ -12,13 +13,20 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Enable CORS for frontend integrations
-from fastapi.middleware.cors import CORSMiddleware
+# Enable CORS for Render frontend
+origins = [
+    "https://skillforge-ai-frontend.onrender.com",
+]
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-app.add_middleware( CORSMiddleware, allow_origins=[ "https://skillforge-ai-frontend.onrender.com" ], allow_credentials=True, allow_methods=["*"], allow_headers=["*"], )
-
-# Mount Routers
+# Mount routers
 app.include_router(auth.router)
 app.include_router(skills.router)
 app.include_router(roadmap.router)
