@@ -126,6 +126,11 @@ export async function loginRequest(
     password
   );
 
+  formData.append(
+  "grant_type",
+  "password"
+);
+
 
 
   const response =
