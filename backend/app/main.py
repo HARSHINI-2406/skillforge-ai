@@ -16,7 +16,7 @@ app = FastAPI(
 from fastapi.middleware.cors import CORSMiddleware
 
 
-pp.add_middleware( CORSMiddleware, allow_origins=[ "https://skillforge-ai-frontend.onrender.com" ], allow_credentials=True, allow_methods=["*"], allow_headers=["*"], )
+app.add_middleware( CORSMiddleware, allow_origins=[ "https://skillforge-ai-frontend.onrender.com" ], allow_credentials=True, allow_methods=["*"], allow_headers=["*"], )
 
 # Mount Routers
 app.include_router(auth.router)
