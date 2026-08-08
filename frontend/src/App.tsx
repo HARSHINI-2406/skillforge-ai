@@ -139,6 +139,14 @@ export default function App() {
             </ProtectedRoute>
           } 
         />
+        <Route
+  path="/assessment"
+  element={
+    <ProtectedRoute>
+      <Assessment />
+    </ProtectedRoute>
+  }
+/>
 
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />
