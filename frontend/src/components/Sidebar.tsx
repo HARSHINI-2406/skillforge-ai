@@ -11,7 +11,8 @@ import {
   Users, 
   LogOut, 
   Brain,
-  Award
+  Award,
+  ClipboardCheck
 } from "lucide-react";
 
 export default function Sidebar() {
@@ -27,6 +28,7 @@ export default function Sidebar() {
     { to: "/resume", label: "Resume ATS", icon: FileText },
     { to: "/analytics", label: "Analytics", icon: BarChart2 },
     { to: "/community", label: "Community", icon: Users },
+    { to: "/assessment", label: "Skill Assessment", icon: ClipboardCheck },
   ];
 
   return (
