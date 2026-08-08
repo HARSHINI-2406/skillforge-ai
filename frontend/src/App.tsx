@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useStore } from "./store/useStore";
+import Assessment from "./pages/Assessment";
 
 // Pages
 import LandingPage from "./pages/LandingPage";
@@ -61,6 +62,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/assessment" element={<Assessment />} />
 
         {/* Protected Onboarding */}
         <Route 
